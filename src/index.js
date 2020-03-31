@@ -7,6 +7,7 @@ import { InMemoryCache } from "apollo-cache-inmemory";
 import { ApolloProvider } from "@apollo/react-hooks";
 
 import App from './App';
+import OnlineUsers from './Subscription';
 
 const client = new ApolloClient({
     link: new WebSocketLink({
@@ -24,6 +25,7 @@ const client = new ApolloClient({
 const WrappedApp = (
   <ApolloProvider client={client}>
     <App />
+    <OnlineUsers />
   </ApolloProvider>
 );
 

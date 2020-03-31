@@ -12,8 +12,10 @@ const GET_USERS = gql`
 `;
 
 const App = () => {
-  const { loading, error, data } = useQuery(GET_USERS);
 
+  const { loading, error, data } = useQuery(GET_USERS, {
+    pollInterval: 500,
+  });
   if (loading) return "loading...";
   if (error) return `error: ${error.message}`;
 
